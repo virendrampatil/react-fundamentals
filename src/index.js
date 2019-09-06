@@ -2,6 +2,22 @@ import React from "react";
 import ReactDOM from "react-dom";
 import AuthorQuiz from "./AuthorQuiz";
 
+const authors = [
+  {
+    name: "Mark Twain",
+    imageUrl: "images/authors/marktwain.png",
+    imageSource: "Wikimedia Commons",
+    books: ["The Adventures of Hucleberryy Finn"]
+  }
+];
+
+const state = {
+  turnData: {
+    author: authors[0],
+    books: authors[0].books
+  }
+};
+
 let App = document.getElementById("app");
 
-ReactDOM.render(<AuthorQuiz />, App);
+ReactDOM.render(<AuthorQuiz {...state} />, App);
